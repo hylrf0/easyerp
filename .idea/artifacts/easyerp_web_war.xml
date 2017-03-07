@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="easyerp.web:war">
+    <output-path>$PROJECT_DIR$/easyerp.web/target</output-path>
+    <root id="archive" name="easyerp.web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="easyerp.web:war exploded" />
+    </root>
+  </artifact>
+</component>

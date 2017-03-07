@@ -1,0 +1,129 @@
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!--
+        encoders are assigned the type
+        default
+        ch.qos.logback.classic.encoder.PatternLayoutEncoder by
+        -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 打印日常日志 start -->
+    <appender name="COMMON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/linrufeng/logs/common.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/Users/linrufeng/logs/common.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 打印日常日志 end -->
+
+    <!-- 打印错误日志 start -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/linrufeng/logs/error.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/Users/linrufeng/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 打印错误日志 start -->
+
+    <appender name="DB" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/linrufeng/logs/db.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/Users/linrufeng/logs/db.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="APACHE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/linrufeng/logs/apache.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/Users/linrufeng/logs/apache.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/linrufeng/logs/spring.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/Users/linrufeng/logs/spring.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>common.log</file>
+        <!--
+        encoders are assigned the type
+        default
+        ch.qos.logback.classic.encoder.PatternLayoutEncoder by
+        -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- DB 相关 start -->
+    <logger name="com.ibatis" additivity="false">
+        <level value="WARN" />
+        <appender-ref ref="DB" />
+        <appender-ref ref="ERROR" />
+    </logger>
+
+    <logger name="lrf.dao" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="DB" />
+        <appender-ref ref="ERROR" />
+    </logger>
+
+    <logger name="java.sql" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="DB" />
+        <appender-ref ref="ERROR" />
+    </logger>
+
+    <logger name="java.sql.ResultSet" additivity="false">
+        <level value="INFO" />
+        <appender-ref ref="DB" />
+        <appender-ref ref="ERROR" />
+    </logger>
+    <!-- DB 相关 end -->
+
+    <!-- 系统相关 start -->
+    <logger name="org.mybatis.spring" additivity="false">
+        <level value="WARN" />
+        <appender-ref ref="SPRING" />
+        <appender-ref ref="ERROR" />
+    </logger>
+
+    <logger name="org.apache" additivity="false">
+        <level value="WARN" />
+        <appender-ref ref="APACHE" />
+        <appender-ref ref="ERROR" />
+    </logger>
+    <!-- 系统相关 end -->
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="COMMON" />
+        <appender-ref ref="ERROR" />
+    </root>
+</configuration>

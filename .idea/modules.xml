@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/easyerp.iml" filepath="$PROJECT_DIR$/easyerp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyerp.common/easyerp.common.iml" filepath="$PROJECT_DIR$/easyerp.common/easyerp.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyerp.dao/easyerp.dao.iml" filepath="$PROJECT_DIR$/easyerp.dao/easyerp.dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyerp.service/easyerp.service.iml" filepath="$PROJECT_DIR$/easyerp.service/easyerp.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyerp.web/easyerp.web.iml" filepath="$PROJECT_DIR$/easyerp.web/easyerp.web.iml" />
+    </modules>
+  </component>
+</project>

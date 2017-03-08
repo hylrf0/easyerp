@@ -30,7 +30,7 @@ public class LoginCotroller {
         if (num > 5) {
             return Result.wrapSuccessResult(null);
         } else {
-            return Result.warpErrorResult(ErrorCode.LOGIN_FAILED.getCode(), ErrorCode.LOGIN_FAILED.getMessage());
+            return Result.warpErrorResult(ErrorCode.LOGIN_FAILED);
         }
     }
 }

@@ -35,12 +35,32 @@ public class Result<T> {
 
     /**
      * 返回失败结果
-     * @param code
+     * @param errorCode
+     * @param <T>
+     * @return
+     */
+    public static <T> Result warpErrorResult(ErrorCode errorCode) {
+        return new Result(null, false, errorCode.getCode(), errorCode.getMessage());
+    }
+
+    /**
+     * 返回失败结果
      * @param message
      * @param <T>
      * @return
      */
-    public static <T> Result warpErrorResult(String code, String message) {
-        return new Result(null, false, code, message);
+    public static <T> Result warpErrorResult(String message) {
+        return new Result(null, false, ErrorCode.UNDEFINED_CODE.getCode(), String.format(ErrorCode.UNDEFINED_CODE.getMessage(), message));
+    }
+
+    /**
+     * 返回失败结果
+     * @param errorCode
+     * @param message
+     * @param <T>
+     * @return
+     */
+    public static <T> Result warpErrorResult(ErrorCode errorCode, String message) {
+        return new Result(null, false, errorCode.getCode(), String.format(errorCode.getMessage(), message));
     }
 }

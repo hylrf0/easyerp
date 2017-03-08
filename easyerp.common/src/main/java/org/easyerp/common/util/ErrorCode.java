@@ -6,7 +6,9 @@ package org.easyerp.common.util;
  */
 
 public enum ErrorCode {
-    LOGIN_FAILED("000001", "账号名或密码错误");
+    LOGIN_FAILED("000001", "账号名或密码错误"),
+    UNDEFINED_CODE("999999", "%s");
+    ;
     private String code;
 
     private String message;

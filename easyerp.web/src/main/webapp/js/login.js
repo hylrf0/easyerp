@@ -7,7 +7,7 @@ var login = new Vue({
     methods : {
         login : function () {
             var self = this;
-            self.$http.post("/login/checkLogin", {"username" : self.username, "password" : self.password}).then(response => {
+            self.$http.post("/easyerp/login/checkLogin", {"username" : self.username, "password" : self.password}).then(response => {
                 var result = response.body;
                 alert(result.code);
         }, response => {

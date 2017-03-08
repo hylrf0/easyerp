@@ -1,3 +1,5 @@
+var SERVER = location.pathname;
+
 var login = new Vue({
     el : "#app",
     data : {
@@ -7,9 +9,13 @@ var login = new Vue({
     methods : {
         login : function () {
             var self = this;
-            self.$http.post("/easyerp/login/checkLogin", {"username" : self.username, "password" : self.password}).then(response => {
+            self.$http.post(SERVER + "login/checkLogin", {"username" : self.username, "password" : self.password}).then(response => {
                 var result = response.body;
-                alert(result.code);
+                if (result.success) {
+                    alert(result.code);
+                } else {
+                    alert(result.message);
+                }
         }, response => {
                 // error callback
             });

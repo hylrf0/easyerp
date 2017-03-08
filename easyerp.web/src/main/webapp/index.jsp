@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>easyerp</title>
+    <jsp:include page="jsp/include.jsp" />
 </head>
 <body>
-hehe
+<div id="app">
+    <input type="text" v-model="username">
+    <input type="password" v-model="password">
+    <button class="arrow-button" @click="login()">登陆</button>
+</div>
 </body>
+<script src="./js/login.js"></script>
 </html>

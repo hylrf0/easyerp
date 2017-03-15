@@ -18,4 +18,34 @@ public class User extends BaseObject {
      * 密码
      */
     private String password;
+
+    /**
+     * 中文名
+     */
+    private String name;
+
+    /**
+     * 组织ID
+     */
+    private Integer groupId;
+
+    /**
+     * 手机号
+     */
+    private String mobile;
+
+    /**
+     * QQ
+     */
+    private String qq;
+
+    /**
+     * 微信
+     */
+    private String weChat;
+
+    /**
+     * 邮箱
+     */
+    private String email;
 }

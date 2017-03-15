@@ -7,7 +7,7 @@ import org.easyerp.dao.entity.base.BaseObject;
  * Created by Administrator on 2017/3/8 0008.
  */
 @Data
-public class User extends BaseObject {
+public class UserInfo extends BaseObject {
 
     /**
      * 用户名称

@@ -12,5 +12,12 @@
     <groupId>easyerp.dao</groupId>
     <artifactId>easyerp.dao</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>easyerp.common</groupId>
+            <artifactId>easyerp.common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

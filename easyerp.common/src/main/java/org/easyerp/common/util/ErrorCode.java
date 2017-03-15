@@ -7,6 +7,7 @@ package org.easyerp.common.util;
 
 public enum ErrorCode {
     LOGIN_FAILED("000001", "账号名或密码错误"),
+    SYSTEM_EXCEPTION("999998", "系统异常,请联系管理员"),
     UNDEFINED_CODE("999999", "%s");
     ;
     private String code;

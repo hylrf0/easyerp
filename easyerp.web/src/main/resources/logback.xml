@@ -12,10 +12,10 @@
 
     <!-- 打印日常日志 start -->
     <appender name="COMMON" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/linrufeng/logs/common.log</file>
+        <file>D:/logs/common.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/linrufeng/logs/common.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>D:/logs/common.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -25,7 +25,7 @@
 
     <!-- 打印错误日志 start -->
     <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/linrufeng/logs/error.log</file>
+        <file>D:/logs/error.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>/Users/linrufeng/error.%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -40,9 +40,9 @@
     <!-- 打印错误日志 start -->
 
     <appender name="DB" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/linrufeng/logs/db.log</file>
+        <file>D:/logs/db.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/linrufeng/logs/db.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>D:/logs/db.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -50,9 +50,9 @@
     </appender>
 
     <appender name="APACHE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/linrufeng/logs/apache.log</file>
+        <file>D:/logs/apache.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/linrufeng/logs/apache.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>D:/logs/apache.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -60,9 +60,9 @@
     </appender>
 
     <appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/linrufeng/logs/spring.log</file>
+        <file>D:/logs/spring.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/linrufeng/logs/spring.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>D:/logs/spring.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<generatorConfiguration>
+    <!-- 加载配置文件 -->
+    <properties resource="generatorConfig.properties" />
+    <!-- 数据库jar包 -->
+    <classPathEntry location="${classPathEntry}" />
+    <context id="mysql2Beans" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 阻止生成注释 -->
+            <property name="suppressAllComments" value="true" />
+            <!-- 阻止生成的注释包含时间戳 true：是 ： false:否 -->
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="${jdbc_driver}" connectionURL="${jdbc_url}" userId="${jdbc_user}" password="${jdbc_password}" />
+
+        <!-- 指定JDBC类型和Java类型如何转换 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="${javaModelGeneratorTargetPackage}" targetProject="${targetProject}">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="${sqlMapGeneratorTargetPackage}" targetProject="${targetProject}">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="${javaClientGeneratorTargetPackage}" targetProject="${targetProject}" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table schema="${jdbc_schema}" tableName="${jdbc_tableName}" domainObjectName="${domainObjectName}" enableCountByExample="${enableCountByExample}" enableUpdateByExample="${enableUpdateByExample}" enableDeleteByExample="${enableDeleteByExample}"
+               enableSelectByExample="${enableSelectByExample}" selectByExampleQueryId="${selectByExampleQueryId}"></table>
+    </context>
+</generatorConfiguration>

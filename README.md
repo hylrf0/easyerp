@@ -27,3 +27,9 @@ CREATE TABLE `easyerp_user_info` (
   PRIMARY KEY (`id`),  
   KEY `groupId_index` (`group_id`)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+###v1.01 --吹哔战将
+加入mybatis自动生成类和xml的工具
+
+###v1.00 --吹哔战将
+项目初始化

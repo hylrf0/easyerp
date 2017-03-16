@@ -12,7 +12,7 @@ var login = new Vue({
             self.$http.post(SERVER + "login/checkLogin", {"username" : self.username, "password" : self.password}).then(response => {
                 var result = response.body;
                 if (result.success) {
-                    alert(result.code);
+                    self.$http.post(SERVER + "login/getMenu");
                 } else {
                     alert(result.message);
                 }

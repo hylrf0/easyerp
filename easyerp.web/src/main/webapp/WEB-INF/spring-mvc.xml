@@ -39,6 +39,7 @@
     <mvc:resources location="/" mapping="/**/*.woff2"/>
     <mvc:resources location="/" mapping="/**/*.woff"/>
     <mvc:resources location="/" mapping="/**/*.ttf"/>
+    <mvc:resources location="/" mapping="/**/*.jsp"/>
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"

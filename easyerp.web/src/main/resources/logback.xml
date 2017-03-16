@@ -88,7 +88,7 @@
         <appender-ref ref="ERROR" />
     </logger>
 
-    <logger name="lrf.dao" additivity="false">
+    <logger name="org.easyerp.dao" additivity="false">
         <level value="DEBUG" />
         <appender-ref ref="DB" />
         <appender-ref ref="ERROR" />

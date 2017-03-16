@@ -9,4 +9,6 @@ public class Constants {
     public static final String EMPTY_STRING = "";
 
     public static final String SUCCESS_CODE = "000000";
+
+    public static final String CURRENT_USER = "currentUser";
 }

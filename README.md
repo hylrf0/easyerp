@@ -7,6 +7,8 @@ Before lunch -> run maven goal
 clean install -Dmaven.test.skip -U  
 runner -XX:MaxPermSize=256m -Xms256m -Xmx1536m
 
+###v1.0.2 --吹哔战将
+加入session功能
 
 ###v1.01 --吹哔战将
 加入mybatis自动生成类和xml的工具

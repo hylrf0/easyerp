@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
             ContextHolder contextHolder = (ContextHolder)httpServletRequest.getSession().getAttribute(Constants.CURRENT_USER);
 
         if (null == contextHolder) {
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.html").forward(request, response);
         } else {
             httpServletRequest.getSession().setAttribute(Constants.CURRENT_USER, contextHolder);
             chain.doFilter(request, response);

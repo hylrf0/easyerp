@@ -25,6 +25,8 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 public class LoginCotroller {
 
+    private final Integer SESSION_MAX = 30 * 60;// 30分钟
+
     @Autowired
     private UserService userService;
 
@@ -38,8 +40,9 @@ public class LoginCotroller {
             if(null == checkUserInfoBO) {
                 return Result.warpErrorResult(ErrorCode.LOGIN_FAILED);
             }
-
+            request.getSession().setMaxInactiveInterval(SESSION_MAX);
             request.getSession().setAttribute(Constants.CURRENT_USER, checkUserInfoBO);
+            ContextHolder.setUserInfoBO(userInfoBO);
             return Result.wrapSuccessResult(null);
         } catch (Exception e) {
             log.error("{}", e);
@@ -48,13 +51,13 @@ public class LoginCotroller {
 
     }
 
-    @RequestMapping(value = "/getMenu", method = RequestMethod.POST)
+    @RequestMapping(value = "/getMenu")
     public Result getMenu(HttpServletRequest request) {
         UserInfoBO userInfoBO = ContextHolder.getUserInfoBO();
         if (null == userInfoBO) {
-            return Result.warpErrorResult(ErrorCode.LOGIN_FAILED);
+            return Result.warpErrorResult(ErrorCode.NOT_LOGIN);
         }
-        log.info("用户登录,账号:{}, 密码:{}", userInfoBO.getUsername(), userInfoBO.getPassword());
+        log.info("获取菜单,账号:{}, 密码:{}", userInfoBO.getUsername(), userInfoBO.getPassword());
         return Result.wrapSuccessResult(null);
     }
 }

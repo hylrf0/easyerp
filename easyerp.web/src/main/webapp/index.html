@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyerp</title>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.js"></script>
+     引入样式
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css" />
+     引入组件库
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="username">
+    <input type="password" v-model="password">
+    <button class="arrow-button" @click="login()">登陆</button>
+</div>
+<script src="js/login.js"></script>
+</body>
+</html>

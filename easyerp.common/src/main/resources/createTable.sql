@@ -17,3 +17,16 @@ CREATE TABLE `easyerp_user_info` (
   PRIMARY KEY (`id`),
   KEY `groupId_index` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--菜单表
+CREATE TABLE `easyerp_menu` (
+  `id` int(11) NOT NULL COMMENT 'ID',
+  `is_deleted` char(2) NOT NULL COMMENT '是否删除 N-未删除 Y-已删除',
+  `creator` int(11) NOT NULL COMMENT '创建人',
+  `modifier` int(11) NOT NULL COMMENT '修改人',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `modify_time` datetime NOT NULL COMMENT '修改时间',
+  `parent_id` varchar(255) NOT NULL COMMENT '父菜单 0表示一级菜单',
+  `menu_name` varchar(255) NOT NULL COMMENT '菜单名称',
+  PRIMARY KEY (`id`),
+  KEY `parent_id_index` (`parent_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
